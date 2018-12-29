@@ -93,6 +93,7 @@
             this.btnAcessar.TabIndex = 1;
             this.btnAcessar.Text = "Acessar";
             this.btnAcessar.UseVisualStyleBackColor = true;
+            this.btnAcessar.Click += new System.EventHandler(this.btnAcessar_Click);
             // 
             // btnSair
             // 
