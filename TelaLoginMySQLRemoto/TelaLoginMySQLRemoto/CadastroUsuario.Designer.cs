@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCadUsuario = new System.Windows.Forms.TextBox();
-            this.txtCadSenha = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.txtRepeteSenha = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCadSenha = new System.Windows.Forms.TextBox();
+            this.txtCadUsuario = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnVoltarTelaLogin = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -55,37 +55,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados do Usuário:";
             // 
-            // label1
+            // txtRepeteSenha
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(112, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nome de Usuário:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 16);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Senha:";
-            // 
-            // txtCadUsuario
-            // 
-            this.txtCadUsuario.Location = new System.Drawing.Point(9, 50);
-            this.txtCadUsuario.Name = "txtCadUsuario";
-            this.txtCadUsuario.Size = new System.Drawing.Size(172, 22);
-            this.txtCadUsuario.TabIndex = 2;
-            // 
-            // txtCadSenha
-            // 
-            this.txtCadSenha.Location = new System.Drawing.Point(9, 106);
-            this.txtCadSenha.Name = "txtCadSenha";
-            this.txtCadSenha.Size = new System.Drawing.Size(172, 22);
-            this.txtCadSenha.TabIndex = 3;
+            this.txtRepeteSenha.Location = new System.Drawing.Point(9, 163);
+            this.txtRepeteSenha.Name = "txtRepeteSenha";
+            this.txtRepeteSenha.PasswordChar = '#';
+            this.txtRepeteSenha.Size = new System.Drawing.Size(172, 22);
+            this.txtRepeteSenha.TabIndex = 5;
             // 
             // label3
             // 
@@ -96,12 +72,38 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Repita a Senha:";
             // 
-            // txtRepeteSenha
+            // txtCadSenha
             // 
-            this.txtRepeteSenha.Location = new System.Drawing.Point(9, 163);
-            this.txtRepeteSenha.Name = "txtRepeteSenha";
-            this.txtRepeteSenha.Size = new System.Drawing.Size(172, 22);
-            this.txtRepeteSenha.TabIndex = 5;
+            this.txtCadSenha.Location = new System.Drawing.Point(9, 106);
+            this.txtCadSenha.Name = "txtCadSenha";
+            this.txtCadSenha.PasswordChar = '#';
+            this.txtCadSenha.Size = new System.Drawing.Size(172, 22);
+            this.txtCadSenha.TabIndex = 3;
+            // 
+            // txtCadUsuario
+            // 
+            this.txtCadUsuario.Location = new System.Drawing.Point(9, 50);
+            this.txtCadUsuario.Name = "txtCadUsuario";
+            this.txtCadUsuario.Size = new System.Drawing.Size(172, 22);
+            this.txtCadUsuario.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Senha:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nome de Usuário:";
             // 
             // btnCadastrar
             // 
@@ -111,6 +113,7 @@
             this.btnCadastrar.TabIndex = 1;
             this.btnCadastrar.Text = "Cadastrar";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // btnVoltarTelaLogin
             // 
@@ -120,6 +123,7 @@
             this.btnVoltarTelaLogin.TabIndex = 2;
             this.btnVoltarTelaLogin.Text = "Tela Login";
             this.btnVoltarTelaLogin.UseVisualStyleBackColor = true;
+            this.btnVoltarTelaLogin.Click += new System.EventHandler(this.btnVoltarTelaLogin_Click);
             // 
             // frmCadastroUsuario
             // 

@@ -15,7 +15,7 @@ namespace TelaLoginMySQLRemoto
 {
     public partial class frmLogin : Form
     {
-        MySqlConnection conexao = new MySqlConnection("server = localhost; UID = root; password = root; database = testeloginmysql; port = 3306; SslMode = none");
+        MySqlConnection conexao = new MySqlConnection("server = localhost; UID = root; pwd = root; database = testeloginmysql; port = 3306; SslMode = none");
         MySqlCommand cmd = new MySqlCommand();
 
 
@@ -37,14 +37,17 @@ namespace TelaLoginMySQLRemoto
             try
             {
                 cmd.CommandText = "select * from login where usuario = '" + txtUsuario.Text + "' and senha = '" + txtSenha.Text + "'";
-                int valor = int.Parse(cmd.ExecuteScalar().ToString());
-                if (valor == 1)
+                //int valor = int.Parse(cmd.ExecuteScalar().ToString());
+                MySqlDataReader ler = cmd.ExecuteReader();
+                //if (valor == 1)
+                if(ler.Read())
                 {
                     MessageBox.Show("Seja Bem Vindo!!!");
                 }
                 else
                 {
-                    MessageBox.Show("Ops, aconteceu algum problema\n Usuario ou senha inválido\n ou\n Usuário não cadastrado");
+                    MessageBox.Show("Ops, aconteceu algum problema\n\n " +
+                        "Usuário ou senha inválido(s)\n ou\n Usuário não cadastrado", "Atenção!", MessageBoxButtons.OKCancel,MessageBoxIcon.Exclamation);
                 }
             }
             catch(Exception ex)
@@ -53,6 +56,13 @@ namespace TelaLoginMySQLRemoto
             }
 
             conexao.Close();
+        }
+
+        private void btnNovoUsuario_Click(object sender, EventArgs e)
+        {
+            frmCadastroUsuario cadastro = new frmCadastroUsuario();
+            cadastro.Show();
+            this.Hide();
         }
     }
 }
