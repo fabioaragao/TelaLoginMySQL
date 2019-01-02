@@ -37,9 +37,9 @@ namespace TelaLoginMySQLRemoto
             try
             {
                 cmd.CommandText = "select * from login where usuario = '" + txtUsuario.Text + "' and senha = '" + txtSenha.Text + "'";
-                //int valor = int.Parse(cmd.ExecuteScalar().ToString());
+                
                 MySqlDataReader ler = cmd.ExecuteReader();
-                //if (valor == 1)
+                
                 if(ler.Read())
                 {
                     MessageBox.Show("Seja Bem Vindo!!!");
