@@ -30,6 +30,8 @@ namespace TelaLoginMySQLRemoto
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            if (txtCadSenha.Text == txtRepeteSenha.Text) { 
+
             conexao.Open();
             cmd.Connection = conexao;
 
@@ -50,6 +52,11 @@ namespace TelaLoginMySQLRemoto
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu o seguinte erro: " + ex);
+            }
+            }
+            else
+            {
+                MessageBox.Show("As senhas não conferem!", "Problema com as senhas!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             conexao.Close();
